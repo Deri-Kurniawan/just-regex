@@ -1,0 +1,73 @@
+import validateName from './../lib/validateName';
+
+it('should return true when name is valid', () => {
+  expect(validateName('Deri')).toBe(true);
+  expect(validateName('FooBar')).toBe(true);
+});
+
+it('should return false when name is invalid', () => {
+  expect(validateName('Deri~')).toBe(false);
+  expect(validateName('Deri!')).toBe(false);
+  expect(validateName('Deri@')).toBe(false);
+  expect(validateName('Deri#')).toBe(false);
+  expect(validateName('Deri$')).toBe(false);
+  expect(validateName('Deri%')).toBe(false);
+  expect(validateName('Deri^')).toBe(false);
+  expect(validateName('Deri&')).toBe(false);
+  expect(validateName('Deri*')).toBe(false);
+  expect(validateName('Deri(')).toBe(false);
+  expect(validateName('Deri)')).toBe(false);
+  expect(validateName('Deri-')).toBe(false);
+  expect(validateName('Deri_')).toBe(false);
+  expect(validateName('Deri=')).toBe(false);
+  expect(validateName('Deri+')).toBe(false);
+  expect(validateName('Deri[')).toBe(false);
+  expect(validateName('Deri]')).toBe(false);
+  expect(validateName('Deri{')).toBe(false);
+  expect(validateName('Deri}')).toBe(false);
+  expect(validateName('Deri|')).toBe(false);
+  expect(validateName('Deri\\')).toBe(false);
+  expect(validateName('Deri;')).toBe(false);
+  expect(validateName('Deri:')).toBe(false);
+  expect(validateName("Deri'")).toBe(false);
+  expect(validateName('Deri,')).toBe(false);
+  expect(validateName('Deri.')).toBe(false);
+  expect(validateName('Deri/')).toBe(false);
+  expect(validateName('Deri<')).toBe(false);
+  expect(validateName('Deri>')).toBe(false);
+  expect(validateName('Deri?')).toBe(false);
+});
+
+it('should return true when name is valid and allowSpecialCharacters is true', () => {
+  // expect(validateName('Deri`', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri~', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri!', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri@', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri#', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri$', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri%', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri^', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri&', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri*', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri(', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri)', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri-', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri_', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri=', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri+', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri[', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri]', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri{', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri}', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri|', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri\\', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri;', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri:', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName("Deri'", { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri,', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri.', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri/', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri<', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri>', { allowSpecialCharacters: true })).toBe(true);
+  expect(validateName('Deri?', { allowSpecialCharacters: true })).toBe(true);
+});
